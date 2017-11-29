@@ -138,12 +138,12 @@ export type VariablesResult = {
 // any object that can contain a collection of variables
 export type VariableContainer = LexicalEnvironment | ObjectValue | AbstractValue;
 export interface LaunchRequestArguments extends DebugProtocol.LaunchRequestArguments {
-  noDebug?: boolean;
-  sourceFile: string;
-  prepackRuntime: string;
-  prepackArguments: Array<string>;
-  debugInFilePath: string;
-  debugOutFilePath: string;
+  noDebug?: boolean,
+  sourceFile: string,
+  prepackRuntime: string,
+  prepackArguments: Array<string>,
+  debugInFilePath: string,
+  debugOutFilePath: string,
 }
 
 export type StoppedReason = "Entry" | "Breakpoint" | "Step Into";
