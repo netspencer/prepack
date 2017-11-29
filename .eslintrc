@@ -15,9 +15,17 @@
     "jsx": true
   },
 
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "modules": true
+    }
+  },
+
   "env": {
     "es6": true,
-    "jasmine": true,
+    "jasmine": true
   },
 
   "globals": {
