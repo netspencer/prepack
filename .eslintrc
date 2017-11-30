@@ -226,10 +226,9 @@
 
   // Prettier
     "prettier/prettier": ["error", {
-      "singleQuote": true,
-      "trailingComma": "all",
-      "bracketSpacing": false,
-      "jsxBracketSameLine": true,
-      "parser": "flow"    }]
+      "trailingComma": "es5",
+      "printWidth": 120,
+    }]
+
   }
 }
