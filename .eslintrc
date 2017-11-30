@@ -15,6 +15,14 @@
     "jsx": true
   },
 
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "modules": true
+    }
+  },
+
   "env": {
     "es6": true,
     "jasmine": true,
@@ -218,8 +226,10 @@
 
   // Prettier
     "prettier/prettier": ["error", {
-      "trailingComma": "es5",
-      "printWidth": 120,
-    }]
+      "singleQuote": true,
+      "trailingComma": "all",
+      "bracketSpacing": false,
+      "jsxBracketSameLine": true,
+      "parser": "flow"    }]
   }
 }

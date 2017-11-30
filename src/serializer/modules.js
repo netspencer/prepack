@@ -195,7 +195,9 @@ export class ModuleTracer extends Tracer {
                 for (let nestedModuleId of this.uninitializedModuleIdsRequiredInEvaluateForEffects) {
                   let nestedEffects = this.modules.tryInitializeModule(
                     nestedModuleId,
-                    `accelerated initialization of conditional module ${nestedModuleId} as it's required in an evaluate-for-effects context by module ${moduleIdValue}`
+                    `accelerated initialization of conditional module ${
+                      nestedModuleId
+                    } as it's required in an evaluate-for-effects context by module ${moduleIdValue}`
                   );
                   if (
                     nestedEffects !== undefined &&
@@ -209,7 +211,9 @@ export class ModuleTracer extends Tracer {
                 // Keep restarting for as long as we find additional modules to accelerate.
                 if (acceleratedModuleIds.length > 0) {
                   console.log(
-                    `restarting require(${moduleIdValue}) after accelerating conditional require calls for ${acceleratedModuleIds.join()}`
+                    `restarting require(${
+                      moduleIdValue
+                    }) after accelerating conditional require calls for ${acceleratedModuleIds.join()}`
                   );
                   this.statistics.acceleratedModules += acceleratedModuleIds.length;
                 }

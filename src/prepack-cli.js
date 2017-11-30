@@ -155,7 +155,9 @@ function run(
         case "help":
           console.log(
             "Usage: prepack.js [ -- | input.js ] [ --out output.js ] [ --compatibility jsc ] [ --mathRandomSeed seedvalue ] [ --srcmapIn inputMap ] [ --srcmapOut outputMap ] [ --maxStackDepth depthValue ] [ --timeout seconds ] [ --additionalFunctions fnc1,fnc2,... ] [ --lazyObjectsRuntime lazyObjectsRuntimeName]" +
-              Object.keys(flags).map(s => "[ --" + s + "]").join(" ") +
+              Object.keys(flags)
+                .map(s => "[ --" + s + "]")
+                .join(" ") +
               "\n" +
               HELP_STR
           );
@@ -223,9 +225,9 @@ function run(
       for (let [loc, error] of errors) {
         foundFatal = foundFatal || error.severity === "FatalError";
         console.log(
-          `${loc.source || ""}(${loc.start.line}:${loc.start.column +
-            1}) ${error.severity} ${error.errorCode}: ${error.message}` +
-            ` (https://github.com/facebook/prepack/wiki/${error.errorCode})`
+          `${loc.source || ""}(${loc.start.line}:${loc.start.column + 1}) ${error.severity} ${error.errorCode}: ${
+            error.message
+          }` + ` (https://github.com/facebook/prepack/wiki/${error.errorCode})`
         );
       }
       if (foundFatal) process.exit(1);
@@ -243,8 +245,9 @@ function run(
       for (let [loc, error] of errors) {
         foundFatal = foundFatal || error.severity === "FatalError";
         console.log(
-          `${loc.source || ""}(${loc.start.line}:${loc.start.column +
-            1}) ${error.severity} ${error.errorCode}: ${error.message}`
+          `${loc.source || ""}(${loc.start.line}:${loc.start.column + 1}) ${error.severity} ${error.errorCode}: ${
+            error.message
+          }`
         );
       }
       if (foundFatal) process.exit(1);

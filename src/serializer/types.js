@@ -163,12 +163,14 @@ export class SerializerStatistics {
     console.log(`=== serialization statistics`);
     console.log(`${this.objects} objects with ${this.objectProperties} properties`);
     console.log(
-      `${this.functions} functions plus ${this.functionClones} clones due to captured variables; ${this
-        .referentialized} captured mutable variables`
+      `${this.functions} functions plus ${this.functionClones} clones due to captured variables; ${
+        this.referentialized
+      } captured mutable variables`
     );
     console.log(
-      `${this.valueIds} eager and ${this.delayedValues} delayed value ids generated, and ${this
-        .valuesInlined} values inlined`
+      `${this.valueIds} eager and ${this.delayedValues} delayed value ids generated, and ${
+        this.valuesInlined
+      } values inlined`
     );
     console.log(`${this.acceleratedModules} accelerated and ${this.delayedModules} delayed modules.`);
   }

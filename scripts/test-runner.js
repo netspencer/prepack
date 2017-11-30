@@ -388,7 +388,9 @@ function runTest(name, code, options, args) {
     }
     try {
       try {
-        expected = execInContext(`${addedCode}\n(function () {${expectedCode} // keep newline here as code may end with comment
+        expected = execInContext(`${addedCode}\n(function () {${
+          expectedCode
+        } // keep newline here as code may end with comment
   }).call(this);`);
       } catch (e) {
         expected = "" + e;
@@ -452,8 +454,9 @@ function runTest(name, code, options, args) {
           if (serialized.statistics && functionCount !== serialized.statistics.functionClones) {
             console.log(
               chalk.red(
-                `Code generation serialized an unexpected number of clone functions. Expected: ${functionCount}, Got: ${serialized
-                  .statistics.functionClones}`
+                `Code generation serialized an unexpected number of clone functions. Expected: ${functionCount}, Got: ${
+                  serialized.statistics.functionClones
+                }`
               )
             );
             break;

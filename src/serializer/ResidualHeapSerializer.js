@@ -1550,10 +1550,11 @@ export class ResidualHeapSerializer {
           this.modules.resolveInitializedModules();
           if (shouldEmitLog && this.modules.moduleIds.size > 0)
             console.log(
-              `=== ${this.modules.initializedModules.size} of ${this.modules.moduleIds
-                .size} modules initialized after additional function ${additionalFunctionValue.intrinsicName
-                ? additionalFunctionValue.intrinsicName
-                : ""}`
+              `=== ${this.modules.initializedModules.size} of ${
+                this.modules.moduleIds.size
+              } modules initialized after additional function ${
+                additionalFunctionValue.intrinsicName ? additionalFunctionValue.intrinsicName : ""
+              }`
             );
           // These don't restore themselves properly otherwise.
           this.realm.restoreBindings(modifiedBindings);
@@ -1598,8 +1599,9 @@ export class ResidualHeapSerializer {
     );
     if (this.modules.moduleIds.size > 0 && !this.residualHeapValueIdentifiers.collectValToRefCountOnly) {
       console.log(
-        `=== ${this.modules.initializedModules.size} of ${this.modules.moduleIds
-          .size} modules initialized, ${requireStatistics.replaced} of ${requireStatistics.count} require calls inlined.`
+        `=== ${this.modules.initializedModules.size} of ${this.modules.moduleIds.size} modules initialized, ${
+          requireStatistics.replaced
+        } of ${requireStatistics.count} require calls inlined.`
       );
     }
 
